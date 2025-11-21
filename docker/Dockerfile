@@ -1,10 +1,11 @@
 FROM node:20-alpine
-
 WORKDIR /app
 
-# Copy package files
+# Copy dependency files from build context (project root)
 COPY package*.json ./
-RUN npm ci --only=production
+
+# Install production dependencies
+RUN npm install --omit=dev
 
 # Copy the rest of the app
 COPY . .

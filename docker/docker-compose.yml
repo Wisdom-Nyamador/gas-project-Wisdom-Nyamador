@@ -1,16 +1,20 @@
-version: '3.8'
 services:
   app:
-    build: .
+    build:
+      context: ..           # project root
+      dockerfile: docker/Dockerfile
     container_name: gas-app
     ports:
       - "4000:3000"
+    environment:
+      - APP_VERSION=0.1.0
+      - PORT=3000
 
   prometheus:
     image: prom/prometheus:latest
     container_name: prometheus
     volumes:
-      - ./infra/monitoring/prometheus-config.yml:/etc/prometheus/prometheus.yml
+      - ../infra/monitoring/prometheus-config.yml:/etc/prometheus/prometheus.yml
     ports:
       - "9090:9090"
     depends_on:
@@ -20,7 +24,7 @@ services:
     image: grafana/grafana:latest
     container_name: grafana
     ports:
-      - "3001:3000"
+      - "5000:3000"
     environment:
       - GF_SECURITY_ADMIN_PASSWORD=admin
     depends_on:
