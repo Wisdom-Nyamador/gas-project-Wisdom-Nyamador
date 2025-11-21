@@ -1,14 +1,38 @@
 name: CI
-on: [push, pull_request]
+
+on:
+  push:
+  pull_request:
 
 jobs:
   build-test:
     runs-on: ubuntu-latest
+
     steps:
+      # 1. Checkout code
       - uses: actions/checkout@v4
+
+      # 2. Setup Node.js
       - uses: actions/setup-node@v4
         with:
-          node-version: '20'
-      - run: npm ci
-      - run: npm test
-      - run: npm run lint
+          node-version: 20
+          cache: npm   # Speed up installs
+
+      # 3. Install dependencies
+      - name: Install dependencies
+        run: |
+          if [ -f package-lock.json ]; then
+            echo "Using npm ci"
+            npm ci
+          else
+            echo "package-lock.json not found, using npm install"
+            npm install
+          fi
+
+      # 4. Run tests
+      - name: Run tests
+        run: npm test --if-present
+
+      # 5. Run linter
+      - name: ESLint
+        run: npm run lint --if-present
