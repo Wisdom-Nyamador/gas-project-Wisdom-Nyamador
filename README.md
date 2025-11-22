@@ -21,6 +21,7 @@ Includes a complete CI/CD pipeline, linting, and Docker Compose orchestration.
 
 ✔ Monitoring folder structure already prepared
 📁 Project Structure
+
 gas-project/
 │
 ├── src/
@@ -40,5 +41,8 @@ gas-project/
 ├── README.md
 └── .github/workflows/
     └── ci.yml            # GitHub CI pipeline
+🐳 Running the Application with Docker
+1. Build & Run App Only
+<img width="1366" height="768" alt="Screenshot (63)" src="https://github.com/user-attachments/assets/672b50ae-1b25-42ed-b5ba-60fbd8a3805b" />
 
 
