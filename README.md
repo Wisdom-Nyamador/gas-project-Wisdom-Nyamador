@@ -55,6 +55,14 @@ gas-project/
 Running Lint & Tests Locally
 <img width="1366" height="768" alt="Screenshot (67)" src="https://github.com/user-attachments/assets/b3374e3d-b1b8-41cc-84f0-8f75edba41a6" />
 <img width="1366" height="768" alt="Screenshot (68)" src="https://github.com/user-attachments/assets/e789307e-bb74-4553-9965-6438af0e3fa1" />
+🔄 CI/CD: GitHub Actions
+<img width="1366" height="768" alt="Screenshot (69)" src="https://github.com/user-attachments/assets/49cace14-7f68-4161-80ce-a023a593d4a7" />
+📦 Production-Ready Dockerfile
+<img width="1366" height="768" alt="Screenshot (70)" src="https://github.com/user-attachments/assets/621f3a7b-2e8a-4455-b3cb-ff356384c157" />
+🔍 Prometheus Monitoring
+<img width="1366" height="768" alt="Screenshot (72)" src="https://github.com/user-attachments/assets/599b3861-420d-47de-9b71-a28b489b97a2" />
+📈 Grafana Dashboards
+<img width="1366" height="768" alt="Screenshot (73)" src="https://github.com/user-attachments/assets/35e57228-d2ab-4dbe-b2bd-5cc8fc35b95d" />
 
 
 
