@@ -41,8 +41,35 @@ gas-project/
 ├── README.md
 └── .github/workflows/
     └── ci.yml            # GitHub CI pipeline
+    
 🐳 Running the Application with Docker
+
 1. Build & Run App Only
 <img width="1366" height="768" alt="Screenshot (63)" src="https://github.com/user-attachments/assets/672b50ae-1b25-42ed-b5ba-60fbd8a3805b" />
+
+📊 Running Full Monitoring Stack (App + Prometheus + Grafana)
+<img width="1366" height="768" alt="Screenshot (64)" src="https://github.com/user-attachments/assets/a36fd16e-8c14-4589-8fd8-6a84df61602e" />
+<img width="1366" height="768" alt="Screenshot (66)" src="https://github.com/user-attachments/assets/c498f217-d850-4cda-af5b-b8a2a264e97e" />
+<img width="1366" height="768" alt="Screenshot (65)" src="https://github.com/user-attachments/assets/d0adac45-fa8d-44ec-80ff-23cddb781968" />
+
+Running Lint & Tests Locally
+<img width="1366" height="768" alt="Screenshot (67)" src="https://github.com/user-attachments/assets/b3374e3d-b1b8-41cc-84f0-8f75edba41a6" />
+<img width="1366" height="768" alt="Screenshot (68)" src="https://github.com/user-attachments/assets/e789307e-bb74-4553-9965-6438af0e3fa1" />
+🔄 CI/CD: GitHub Actions
+<img width="1366" height="768" alt="Screenshot (69)" src="https://github.com/user-attachments/assets/49cace14-7f68-4161-80ce-a023a593d4a7" />
+📦 Production-Ready Dockerfile
+<img width="1366" height="768" alt="Screenshot (70)" src="https://github.com/user-attachments/assets/621f3a7b-2e8a-4455-b3cb-ff356384c157" />
+🔍 Prometheus Monitoring
+<img width="1366" height="768" alt="Screenshot (72)" src="https://github.com/user-attachments/assets/599b3861-420d-47de-9b71-a28b489b97a2" />
+📈 Grafana Dashboards
+<img width="1366" height="768" alt="Screenshot (73)" src="https://github.com/user-attachments/assets/35e57228-d2ab-4dbe-b2bd-5cc8fc35b95d" />
+
+
+
+
+
+
+
+
 
 
