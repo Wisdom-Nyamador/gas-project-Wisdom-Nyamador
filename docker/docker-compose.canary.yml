@@ -1,0 +1,11 @@
+services:
+  app-canary:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    container_name: gas-canary
+    ports:
+      - "4001:3000"
+    environment:
+      - NODE_ENV=production
+      - CANARY=true

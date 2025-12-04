@@ -3,10 +3,10 @@ const router = express.Router();
 
 router.get('/', (req, res) => {
   res.json({
-    status: 'pass',
-    version: process.env.APP_VERSION || '0.1.0',
-    uptime: process.uptime(),
-    timestamp: new Date().toISOString()
+    status: 'ok',
+    service: 'gas-project',
+    version: process.env.APP_VERSION || '1.0.0',
+    timestamp: new Date().toISOString(),
   });
 });
 

@@ -1,3 +1,4 @@
+
 const express = require('express');
 const morgan = require('morgan');
 const helmet = require('helmet');
@@ -15,6 +16,7 @@ app.get('/', (req, res) => {
 app.use('/health', health);
 app.use('/metrics', metrics);
 
-app.listen(process.env.PORT || 3000, () => {
+app.listen(process.env.PORT || 3500, () => {
   console.log("Server running");
-});
+  
+})

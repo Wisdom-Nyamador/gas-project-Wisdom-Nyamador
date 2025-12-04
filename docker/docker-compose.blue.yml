@@ -1,0 +1,22 @@
+version: "3.8"
+
+services:
+  blue-app:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    container_name: gas-blue
+    environment:
+      - NODE_ENV=production
+    ports:
+      - "7000:3000"  # Only for debugging
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx-router
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    ports:
+      - "80:80"
+    depends_on:
+      - blue-app
