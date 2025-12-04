@@ -1,34 +1,11 @@
-name: Rollback Deployment
-
+name: Rollback
 on:
-  workflow_dispatch:   # manual rollback button in GitHub Actions UI
+  workflow_dispatch:
 
 jobs:
   rollback:
     runs-on: ubuntu-latest
-
     steps:
-      # 1. Setup SSH
-      - name: Setup SSH
-        uses: webfactory/ssh-agent@v0.9.0
-        with:
-          ssh-private-key: ${{ secrets.SERVER_SSH_KEY }}
-
-      # 2. Roll back to previous working container (blue)
-      - name: Switch NGINX back to blue
+      - name: Rollback Placeholder
         run: |
-          ssh -o StrictHostKeyChecking=no \
-            ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} \
-            "sed -i 's/green/blue/g' /etc/nginx/nginx.conf && sudo systemctl restart nginx"
-
-      # 3. Stop broken green/canary containers
-      - name: Stop bad deploy containers
-        run: |
-          ssh -o StrictHostKeyChecking=no \
-            ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} \
-            'docker stop gas-green || true && docker rm gas-green || true && docker stop gas-canary || true && docker rm gas-canary || true'
-
-      # 4. Confirm rollback
-      - name: Verify Blue is live
-        run: |
-          curl -f http://${{ secrets.SERVER_IP }}:80/health || exit 1
+          echo "Placeholder for rollback logic: swap slots, redeploy previous image tag, or reduce canary traffic."

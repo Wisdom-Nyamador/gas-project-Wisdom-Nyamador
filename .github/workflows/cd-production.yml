@@ -1,54 +1,11 @@
-name: CD Production
-
+name: CD - Production
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
 
 jobs:
-  deploy:
+  deploy-prod:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Copy files to server
-        uses: appleboy/scp-action@v0.1.7
-        with:
-          host: ${{ secrets.SERVER_HOST }}
-          username: ${{ secrets.SERVER_USER }}
-          key: ${{ secrets.SERVER_SSH_KEY }}
-          source: "./"
-          target: "~/gas-app"
-
-      - name: Run Blue/Green Deployment on Server
-        uses: appleboy/ssh-action@v0.1.7
-        with:
-          host: ${{ secrets.SERVER_HOST }}
-          username: ${{ secrets.SERVER_USER }}
-          key: ${{ secrets.SERVER_SSH_KEY }}
-          script: |
-            cd ~/gas-app
-
-            echo "Checking which version is currently active..."
-
-            CURRENT=$(docker ps --format "{{.Names}}" | grep -E "gas-blue|gas-green" || true)
-
-            if [[ "$CURRENT" == *"gas-blue"* ]]; then
-              echo "Blue is active → Deploying GREEN..."
-              docker compose -f docker/docker-compose.green.yml up -d --build
-
-              echo "Switching NGINX upstream to GREEN..."
-              sed -i 's/set $app_upstream .*/set $app_upstream "http:\/\/green:3000";/' docker/nginx/app.conf
-
-            else
-              echo "Green is active → Deploying BLUE..."
-              docker compose -f docker/docker-compose.blue.yml up -d --build
-
-              echo "Switching NGINX upstream to BLUE..."
-              sed -i 's/set $app_upstream .*/set $app_upstream "http:\/\/blue:3000";/' docker/nginx/app.conf
-            fi
-
-            echo "Reloading NGINX..."
-            docker exec nginx-router nginx -s reload
+      - name: Production Deployment Placeholder
+        run: |
+          echo "Placeholder: add safe approvals, manual gates, and production deployment steps."
